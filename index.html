@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-8">
+        <h1 class="text-2xl font-bold mb-8 text-center">Disease Prediction Form</h1>
+        <form action="/predict" method="post" class="bg-white p-6 rounded shadow-md">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-gray-700">Fever</label>
+                    <input type="checkbox" name="fever" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="fever" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Myalgia</label>
+                    <input type="checkbox" name="myalgia" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="myalgia" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Headache</label>
+                    <input type="checkbox" name="headache" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="headache" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Rash</label>
+                    <input type="checkbox" name="rash" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="rash" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Vomiting</label>
+                    <input type="checkbox" name="vomiting" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="vomiting" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Nausea</label>
+                    <input type="checkbox" name="nausea" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="nausea" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Back Pain</label>
+                    <input type="checkbox" name="back_pain" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="back_pain" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Conjunctivitis</label>
+                    <input type="checkbox" name="conjunctivitis" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="conjunctivitis" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Arthritis</label>
+                    <input type="checkbox" name="arthritis" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="arthritis" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Arthralgia</label>
+                    <input type="checkbox" name="arthralgia" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="arthralgia" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Petechiae</label>
+                    <input type="checkbox" name="petechiae" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="petechiae" value="1" class="ml-4 mr-2">No
+                </div>
+                <div>
+                    <label class="block text-gray-700">Retro-orbital Pain</label>
+                    <input type="checkbox" name="retro_orbital_pain" value="2" class="mr-2">Yes
+                    <input type="checkbox" name="retro_orbital_pain" value="1" class="ml-4 mr-2">No
+                </div>
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded">Predict</button>
+            </div>
+        </form>
+        {% if prediction_text %}
+            <div class="mt-4 p-4 bg-green-100 border-l-4 border-green-500 text-green-700">
+                {{ prediction_text }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
